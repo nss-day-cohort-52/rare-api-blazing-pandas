@@ -1,0 +1,11 @@
+[
+    {
+        "model": "rareapi.rareuser",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "Me",
+            "profile_image_url": "https://www.the-sun.com/wp-content/uploads/sites/6/2021/12/LM_BrunoEncanto_Comp-1.jpeg"
+        }
+    }
+]
