@@ -29,6 +29,18 @@ class CategoryView(ViewSet):
         categories = Category.objects.all()
         serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)
+    
+    def create(self, request):
+        """Handle POST operations
+
+        Returns
+            Response -- JSON serialized category instance
+        """
+        category = Category.objects.create(
+            label=request.data["label"],
+        )
+        serializer = CategorySerializer(category)
+        return Response(serializer.data)
 
 class CategorySerializer(serializers.ModelSerializer):
     """JSON serializer for categories
