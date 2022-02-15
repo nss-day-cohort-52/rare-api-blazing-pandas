@@ -3,8 +3,14 @@
         "model": "rareapi.category",
         "pk": 1,
         "fields": {
-            "label": "test"
+            "label": "cat1"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "cat2"
         }
     }
-
 ]
