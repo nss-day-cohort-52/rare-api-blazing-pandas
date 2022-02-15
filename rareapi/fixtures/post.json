@@ -1,0 +1,15 @@
+[
+    {
+        "model": "rareapi.post",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "category_id": 1, 
+            "title": "Sample Post",
+            "publication_date": "2022-02-01", 
+            "image_url": "https://blog.photofeeler.com/wp-content/uploads/2017/09/tinder-photo-size-tinder-picture-size-tinder-aspect-ratio-image-dimensions-crop.jpg", 
+            "content": "this is a sample post",
+            "approved": "True"
+        }
+    }
+]
