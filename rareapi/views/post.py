@@ -31,7 +31,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('__all__')
-        depth = 1
+        depth = 2
         
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
