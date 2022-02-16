@@ -50,7 +50,8 @@ def register_user(request):
         username=request.data['username'],
         password=request.data['password'],
         first_name=request.data['first_name'],
-        last_name=request.data['last_name']
+        last_name=request.data['last_name'],
+        is_staff=request.data['admin']
     )
 
     # Now save the extra info in the levelupapi_rareUser table
@@ -65,4 +66,17 @@ def register_user(request):
     # Return the token to the client
     data = { 'token': token.key,
             'valid': True }
+    return Response(data)
+
+    #alma's login. Lowered
+    
+@api_view(['GET'])
+def check_admin(request):
+    '''Checks if a user is an admin, based on their token
+    
+    Method arguments:
+      request -- The full HTTP request object
+    '''
+    thisUser = RareUser.objects.get(user=request.auth.user)
+    data = { 'auth': thisUser.user.is_staff }
     return Response(data)

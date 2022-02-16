@@ -1,3 +1,3 @@
 from rareapi.views.post import PostView
-from .auth import register_user, login_user
+from .auth import register_user, login_user, check_admin
 from.post import PostView
