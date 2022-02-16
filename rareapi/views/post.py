@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.http import HttpResponseServerError
 from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
