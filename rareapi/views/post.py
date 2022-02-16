@@ -30,12 +30,12 @@ class PostView(ViewSet):
 
 
     def create(self, request):
-        user_id = RareUser.objects.get(user=request.auth.user)
-        category = Category.objects.get(pk=request.data['category_id'])
+        user = RareUser.objects.get(user=request.auth.user)
+        category = Category.objects.get(pk=request.data['category'])
         try:
             serializer = CreatePostSerializer(data=request.data)
             serializer.is_valid(raise_exception=True)
-            serializer.save(user_id=user_id, category_id=category)
+            serializer.save(user=user, category=category)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except ValidationError as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
