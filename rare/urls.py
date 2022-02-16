@@ -17,13 +17,12 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
-from rareapi.views import login_user, register_user, check_admin
-from rareapi.views.post import PostView
-from rareapi.views.categories import CategoryView
+from rareapi.views import login_user, register_user, check_admin, RareUserView, PostView, CategoryView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostView, 'post')
+router.register(r'users', RareUserView, 'post')
 
 router.register(r'categories', CategoryView, 'category')
 
