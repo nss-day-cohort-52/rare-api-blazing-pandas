@@ -45,12 +45,13 @@ class PostView(ViewSet):
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for game types
     """
+        
     class Meta:
         model = Post
         fields = ('__all__')
-        depth = 2
+        depth = 3
         
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'user_id', 'category_id', 'title', 'publication_date', 'image_url', 'content']
+        fields = ['id', 'user', 'category', 'title', 'publication_date', 'image_url', 'content']
