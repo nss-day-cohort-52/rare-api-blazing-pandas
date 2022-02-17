@@ -29,7 +29,7 @@ class RareUserView(ViewSet):
         Returns:
             Response -- JSON serialized list of games
         """
-        rareUsers = RareUser.objects.all()
+        rareUsers = RareUser.objects.all().order_by('user__username')
         # rareUser_type = request.query_params.get('type', None)
         # if rareUser_type is not None:
         #     rareUsers = rareUsers.filter(rareUser_type_id=rareUser_type)
@@ -47,6 +47,5 @@ class RareUserSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = RareUser
-        depth = 1
         fields = ('id', 'bio', 'user', 'profile_image_url')
         

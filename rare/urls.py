@@ -23,7 +23,6 @@ from rareapi.views import login_user, register_user, check_admin, RareUserView, 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostView, 'post')
 router.register(r'users', RareUserView, 'post')
-
 router.register(r'categories', CategoryView, 'category')
 
 
