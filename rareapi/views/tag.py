@@ -26,7 +26,7 @@ class TagView(ViewSet):
         Returns:
             Response -- JSON serialized list of games
         """
-        tags = Tag.objects.all()
+        tags = Tag.objects.all().order_by('label')
         serializer = TagSerializer(tags, many=True)
         return Response(serializer.data)
     
